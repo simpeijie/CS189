@@ -2,7 +2,7 @@
 
 A spam classifier modeled using logistic regression. 
 
-spam.mat in data/ consists of 4601 email messages, from which 57 features have been extracted as follows:
+spam.mat in `data/` consists of 4601 email messages, from which 57 features have been extracted as follows:
 * 48 features giving the percentage (0 - 100) of words in a given message which match a given word on the list. 
 The list contains words such as business, free, george, etc. (The data was collected by George Forman, so his name occurs quite a lot!)
 * 6 features giving the percentage (0 - 100) of characters in the email that match a given character on the list.
