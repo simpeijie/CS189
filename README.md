@@ -1,3 +1,3 @@
 # CS189 Machine Learning
 
-Contains files of mini-projects from the machine learning course at UC Berkeley.
+Contains files of homework assignments and projects from the machine learning course at UC Berkeley.
