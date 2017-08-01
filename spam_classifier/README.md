@@ -22,7 +22,7 @@ The dataset is prepocessed in three different ways before being used for trainin
 
 The gradient descent equations are derived for logistic regression with L2 regularization. Gradient descent aims to minimize the negative log likelihood, and the hyperparameters which include the learning rate, the boundary for classifying if an email is spam vs. ham, and the regularization parameter are selected after some tuning. Here, the parameters are initialized to 0 and the model is trained on values ranging from 0 to 1, each with increments of 0.1. 
 
-![parameter_tuning](img/parameter_tuning)
+![parameter_tuning](img/parameter_tuning.png)
 
 Unlike gradient descent in which one iteration involves scanning through the whole training data and computing the full gradient, 
 stochastic gradient descent processes one data point each iteration. 
