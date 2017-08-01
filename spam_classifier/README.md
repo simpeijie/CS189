@@ -17,32 +17,13 @@ Of all the messages, 3450 are the training set and 1151 are the test set.
 
 The dataset is prepocessed in three different ways before being used for training and testing:
 1. Standardizing the columns so they have mean 0 and unit variance.
-2. Transforming the features using log($x_ij$ + 0.1).
-3. Binarizing the features on $x_ij$ > 0.
+2. Transforming the features using log(x_ij + 0.1).
+3. Binarizing the features on x_ij > 0.
 
-The gradient descent equations are derived for logistic regression with L2 regularization. Gradient descent aims to minimize the negative log likelihood, and the hyperparameters which include the learning rate, the boundary for classifying if an email is spam vs. ham, and the regularization parameter are selected after some tuning. Here, the parameters are initialized to 0 and the model is trained on values ranging from 0 to 1, each with increments of 0.1. 
+The gradient descent equations are derived for logistic regression with L2 regularization. Gradient descent aims to minimize the negative log likelihood. The loss after each iteration is being kept track of and a graph is plotted for verification. 
+
+Unlike gradient descent in which one iteration involves scanning through the whole training data and computing the full gradient, stochastic gradient descent processes one random data point each iteration. 
+
+The hyperparameters which include the learning rate, the boundary for classifying if an email is spam vs. ham, and the regularization parameter are selected after some tuning. Here, the parameters are initialized to 0 and the model is trained on values ranging from 0 to 1, each with increments of 0.1. 
 
 ![parameter_tuning](img/parameter_tuning.png)
-
-Unlike gradient descent in which one iteration involves scanning through the whole training data and computing the full gradient, 
-stochastic gradient descent processes one data point each iteration. 
-
-
-<style TYPE="text/css">
-code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
-</style>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
-    }
-});
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
