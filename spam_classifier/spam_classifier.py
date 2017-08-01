@@ -62,6 +62,12 @@ def predict(preds, boundary):
 	return [1 if p > boundary else 0 for p in preds]
 
 
+def load_data(file):
+	mat_dict = scipy.io.loadmat("spam.mat", appendmat=False)
+	X_train = mat_dict['Xtrain']
+	X_test = mat_dict['Xtest']
+	y_train = mat_dict['ytrain']
+
 if __name__ == "__main__":
 	mat_dict = scipy.io.loadmat("spam.mat", appendmat=False)
 	X_train = mat_dict['Xtrain']
