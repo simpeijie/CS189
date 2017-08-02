@@ -26,4 +26,13 @@ Unlike gradient descent in which one iteration involves scanning through the who
 
 The hyperparameters which include the learning rate, the boundary for classifying if an email is spam vs. ham, and the regularization parameter are selected after some tuning. Here, the parameters are initialized to 0 and the model is trained on values ranging from 0 to 1, each with increments of 0.1. 
 
-![parameter_tuning](img/parameter_tuning.png)
+```python
+accuracy = np.array([[[None for _ in range(range_of_reg.size)] for _ in range(range_of_alphas.size)] for _ in range(range_of_boundaries.size)])
+	for b in range(range_of_boundaries.size):
+		for a in range(range_of_alphas.size):
+			for r in range(range_of_reg.size):
+				temp_a, temp_r, temp_b = alpha + a*0.1, reg + r*0.1, boundary + b*0.1
+				model = train_gd(X_train_std, y_train, temp_a, temp_r)
+				preds = predict(X_train_std.dot(model), temp_b)
+				accuracy[b][a][r] = metrics.accuracy_score(y_train, preds)
+```
