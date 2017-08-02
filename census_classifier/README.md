@@ -8,7 +8,7 @@ In `census_data/`, the training and test data are in csv format. They have to be
 
 The data is categorized into numerical and categorical variables. By using `DictVectorizer` from `sklearn.feature_extraction`, we can vectorize on one-hot encode those features. 
 
-Doc here: [](http://scikit-learn.org/stable/modules/feature_extraction.html)
+Doc here: [http://scikit-learn.org/stable/modules/feature_extraction.html](http://scikit-learn.org/stable/modules/feature_extraction.html)
 
 By running 
 ```
